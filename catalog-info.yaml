@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-rvqvumia-gitops
+  description: This is GitOps manifest for go-rvqvumia   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-rvqvumia
+    backstage.io/kubernetes-id: go-rvqvumia 
+    backstage.io/techdocs-ref: dir:.
+    dev.azure.com/project-repo: rhtap-rhdh-qe/go-rvqvumia-gitops
+    dev.azure.com/project: shared-public
+    dev.azure.com/build-definition: rhtap-rhdh-qe.go-rvqvumia-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-rvqvumia
